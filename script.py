@@ -109,22 +109,13 @@ def enemy_search1():
             if grid[enemy_grid_row - x][enemy_grid_col + y].type == "fire_turret":
                enemy.target =  grid[enemy_grid_row - x][enemy_grid_col + y]
                enemy.target_dir = "left"
-
-
-build_rect = pygame.Rect(-100,-100, 1, 1)
-def enemy_move():
-    global build_rect
-    for enemy in enemies:
-        enemy_on_right_wall = False
-        enemy_on_left_wall = False
-        enemy_on_roof = False
-        enemy_on_floor = False
-        enemy_on_turret = False
-
-        rect = pygame.Rect(enemy.x, enemy.y, 50, 50)
-        for row in grid:
-            for tile in row:
-
+def tickle_ashton():
+    global enemy_on_turret, build_rect
+    for row in grid:
+        for tile in row:
+            for enemy in enemies:
+                rect = pygame.Rect(enemy.x, enemy.y, 50, 50)
+                c = False
                 if tile.type == "fire_turret":
                     build_rect = pygame.Rect(tile.row * 50, tile.col * 50, 50, 50)
                     c = rect.colliderect(build_rect)

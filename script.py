@@ -119,8 +119,31 @@ def tickle_ashton():
                 if tile.type == "fire_turret":
                     build_rect = pygame.Rect(tile.row * 50, tile.col * 50, 50, 50)
                     c = rect.colliderect(build_rect)
-        if c == True:
-            enemy_on_turret = True
+                if c == True:
+                    enemy_on_turret = True
+                    tile.damage = True
+                    print("collide")
+            if tile.health <= 0:
+                print("Ayeu")
+                tile.type = "ground"
+                tile.color = grid_color
+                tile.wid = 1
+                tile.damage = False
+                tile.health = 100
+                enemy_on_turret = False
+                enemy.target = False
+                enemy.target_dir = "Core"
+
+
+enemy_on_turret = False
+build_rect = pygame.Rect(-100,-100, 1, 1)
+def enemy_move():
+    global build_rect, enemy_on_turret
+    for enemy in enemies:
+        enemy_on_right_wall = False
+        enemy_on_left_wall = False
+        enemy_on_roof = False
+        enemy_on_floor = False
         if enemy_on_turret == False:
             if enemy.x <= 0:
                 enemy_on_left_wall = True

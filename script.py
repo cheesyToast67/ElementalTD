@@ -290,6 +290,8 @@ while not exit:
 
 
         # Display Grid
+        tickle_ashton()
+        reset_builds()
         enemy_search1()
         enemy_move()
         draw_grid()

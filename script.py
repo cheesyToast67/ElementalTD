@@ -190,6 +190,8 @@ def enemy_damage():
         for tile in row:
             if tile.damage == True:
                 tile.health = tile.health - 1
+                rect = pygame.Rect(tile.row * 50, (tile.col *50) - 20, tile.health, 20 )
+                pygame.draw.rect(canvas, (0,100,0), rect)
 
 
 def reset_builds():

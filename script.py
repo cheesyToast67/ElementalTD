@@ -179,7 +179,7 @@ def enemy_move():
             elif enemy.target_dir == "left":
                 if not enemy_on_left_wall:
                     enemy.x -= 1
-            elif enemy.target_dir == "Core":
+            else:
                 if not enemy_on_left_wall:
                     enemy.x -= 1
                 if not enemy_on_floor:

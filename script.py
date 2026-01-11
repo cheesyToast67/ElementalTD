@@ -294,6 +294,7 @@ while not exit:
         reset_builds()
         enemy_search1()
         enemy_move()
+        enemy_damage()
         draw_grid()
         draw_enemies()
         pygame.display.update()

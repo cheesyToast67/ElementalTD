@@ -39,7 +39,7 @@ for row in range(columns):
     for col in range(rows):
         rect = pygame.Rect(col * 50, row * 50, 50, 50)
         pygame.draw.rect(canvas, grid_color, rect, 1)
-        tile = ground(row, col, grid_color, 1, False, False, "ground", False)
+        tile = ground(row, col, grid_color, 1, False, False, "ground", False, False, 100)
         grid_row.append(tile)
     grid.append(grid_row)
 

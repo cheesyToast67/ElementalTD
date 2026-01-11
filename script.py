@@ -192,6 +192,18 @@ def enemy_damage():
                 tile.health = tile.health - 1
 
 
+def reset_builds():
+    for enemy in enemies:
+        for row in grid:
+            for tile in row:
+                if tile == enemy.target:
+                    if tile.health <= 0:
+                        print("Ayew")
+                        enemy.target_dir = "down_left"
+                        tile.occupy = False
+                        tile.type = "ground"
+                        tile.health = 100
+
 coal_place = False
 game_screen = False
 start_screen = True

@@ -185,6 +185,11 @@ def enemy_move():
                 if not enemy_on_floor:
                     enemy.y += 1
 
+def enemy_damage():
+    for row in grid:
+        for tile in row:
+            if tile.damage == True:
+                tile.health = tile.health - 1
 
 
 coal_place = False

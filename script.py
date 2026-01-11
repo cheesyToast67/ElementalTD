@@ -102,7 +102,8 @@ def enemy_search1():
                enemy.target_dir = "down_left"
         for x in range(3):
             y = 0
-            if grid[enemy_grid_row + x][enemy_grid_col + y].type == "fire_turret":
+            b = x +1
+            if grid[enemy_grid_row + b][enemy_grid_col + y].type == "fire_turret":
                enemy.target = grid[enemy_grid_row + x][enemy_grid_col + y]
                enemy.target_dir = "right"
             if grid[enemy_grid_row - x][enemy_grid_col + y].type == "fire_turret":
